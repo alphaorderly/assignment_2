@@ -1,0 +1,4 @@
+
+yarn lint
+
+npx lint-staged
