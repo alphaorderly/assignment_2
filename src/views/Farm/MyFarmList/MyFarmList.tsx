@@ -3,6 +3,7 @@ import { useRecoilValue } from 'recoil';
 import accountState from '../../../store/account-state';
 import useFetch from '../../../hooks/useFetch';
 import FarmItem from '../../../components/FarmItem';
+import Loading from '../../../components/Loading';
 
 const MyFarmList: React.FC = () => {
     const account = useRecoilValue(accountState);
@@ -13,11 +14,11 @@ const MyFarmList: React.FC = () => {
     );
 
     if (loading) {
-        return <div>loading...</div>;
+        return <Loading />;
     }
 
     if (error) {
-        return <div>error...</div>;
+        return <div>데이터를 불러오는 중 에러가 발생했습니다.</div>;
     }
 
     return (
