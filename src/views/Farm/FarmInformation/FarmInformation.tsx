@@ -28,6 +28,7 @@ const FarmInformation: React.FC = () => {
         'smartFarmId',
         Number(farmId)
     );
+
     const [deviceModal, setDeviceModal] = useState<Device | null>(null);
 
     const patch = usePatch();

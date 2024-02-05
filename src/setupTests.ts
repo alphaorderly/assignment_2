@@ -6,6 +6,10 @@ import '@testing-library/jest-dom';
 import 'jest-canvas-mock';
 import server from './mocks/server';
 
+jest.mock('react-chartjs-2', () => ({
+    Line: (): void => null,
+}));
+
 beforeAll(() => server.listen());
 
 afterEach(() => server.resetHandlers());

@@ -13,7 +13,7 @@ module.exports = {
         'react-app/jest',
         'airbnb-base',
         'prettier',
-        'plugin:react/recommended',
+        'plugin:cypress/recommended',
     ],
     parser: '@typescript-eslint/parser',
     plugins: ['@typescript-eslint', 'react', 'prettier'],

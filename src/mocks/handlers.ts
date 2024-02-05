@@ -42,11 +42,6 @@ export default [
                         name: 'tname1',
                         ownerId: 'town1',
                     },
-                    bb: {
-                        id: 'tid2',
-                        name: 'tname2',
-                        ownerId: 'town2',
-                    },
                 })
             )
     ),

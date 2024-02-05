@@ -33,4 +33,6 @@ describe('working correctly', () => {
         const failText = await screen.findByText('올바른 아이디가 아닙니다.');
         expect(failText).toBeInTheDocument();
     });
+
+    // 로그인 성공은 route 가 변경되어 cypress를 사용
 });
