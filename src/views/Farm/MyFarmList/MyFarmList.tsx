@@ -5,6 +5,11 @@ import useFetch from '../../../hooks/useFetch';
 import FarmItem from '../../../components/FarmItem';
 import Loading from '../../../components/Loading';
 
+/**
+ * 자신이 가진 스마트팜의 목록
+ * /farms
+ * @returns
+ */
 const MyFarmList: React.FC = () => {
     const account = useRecoilValue(accountState);
     const [farms, loading, error] = useFetch(

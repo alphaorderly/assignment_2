@@ -5,6 +5,12 @@ import accountState from '../store/account-state';
 
 type LoginReturnType = [(id: string) => void, boolean];
 
+/**
+ * 로그인에 사용할 함수를 리턴한다.
+ * [login, success] = useLogin();
+ * @returns { (id: string) => void } login 유저 id를 인자로 받는 함수, 실패시 두번째 인자가 false 가 된다.
+ * @returns { boolean } success 성공 여부
+ */
 const useLogin = (): LoginReturnType => {
     const setAccount = useSetRecoilState(accountState);
 

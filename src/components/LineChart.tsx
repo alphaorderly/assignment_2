@@ -32,6 +32,15 @@ ChartJS.register(
     Legend
 );
 
+/**
+ * 스마트팜의 센서 상태를 표시하기 위한 차트
+ * @param { number } start 시작값
+ * @param { number } count 차트 데이터 갯수
+ * @param { string } title 차트 제목
+ * @param { string } color 차트 색상
+ * @param { scale? } scale 차트에 해당하는 데이터의 단위
+ * @returns 차트
+ */
 const LineChart: React.FC<LineChartProp> = ({
     start,
     count,

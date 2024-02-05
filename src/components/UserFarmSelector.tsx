@@ -8,6 +8,10 @@ type UserFarmSelectorProp = {
     className?: string;
 };
 
+/**
+ * 유저가 가진 스마트팜을 선택하기 위한 selector
+ * @params { string } className - tailwind 적용을 위한 className
+ */
 const UserFarmSelector: React.FC<UserFarmSelectorProp> = ({ className }) => {
     const account = useRecoilValue(accountState);
     const [farms, loading] = useFetch('smartfarm.json', 'ownerId', account.id);
