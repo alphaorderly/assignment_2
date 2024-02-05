@@ -9,7 +9,7 @@ describe('render well', () => {
         expect(select).toBeDefined();
 
         const options = await screen.findAllByRole('option');
-        expect(options).toHaveLength(3);
+        expect(options).toHaveLength(2);
 
         const listOption = screen.getByRole('option', { name: '농장 리스트' });
         expect(listOption).toBeDefined();
