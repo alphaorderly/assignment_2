@@ -6,6 +6,7 @@ import useFetch from '../../../hooks/useFetch';
 import LineChart from '../../../components/LineChart';
 import UserFarmSelector from '../../../components/UserFarmSelector';
 import usePatch from '../../../hooks/usePatch';
+import Loading from '../../../components/Loading';
 
 type Device = {
     key: string;
@@ -18,6 +19,7 @@ type Device = {
 
 const FarmInformation: React.FC = () => {
     const { farmId } = useParams();
+
     const [farm, farmLoading, farmError] = useFetch(
         'smartfarm.json',
         'id',
@@ -43,11 +45,11 @@ const FarmInformation: React.FC = () => {
     };
 
     if (farmLoading) {
-        return <div>loading...</div>;
+        return <Loading />;
     }
 
     if (farmError || farm.length !== 1) {
-        return <div>error...</div>;
+        return <div>데이터를 불러오는 중 에러가 발생했습니다.</div>;
     }
 
     const currentFarm = farm[0];
@@ -63,32 +65,53 @@ const FarmInformation: React.FC = () => {
     return (
         <div className="m-5 lg:m-20">
             <div>
-                <UserFarmSelector className="mb-5" />
+                <UserFarmSelector className="mb-7" />
             </div>
             <div>
                 <p className="mb-10 text-4xl font-bold">{currentFarm.name}</p>
             </div>
             <div className="grid grid-cols-1 gap-4 lg:grid-cols-4">
-                <LineChart start={20} count={1000} title={'기온'} color="red" />
+                <LineChart
+                    start={20}
+                    count={1000}
+                    title={'기온'}
+                    color="red"
+                    scale="℃"
+                />
                 <LineChart
                     start={60}
                     count={1000}
                     title={'습도'}
                     color="blue"
+                    scale="%"
                 />
                 <LineChart
                     start={100}
                     count={1000}
                     title={'co2'}
                     color="green"
+                    scale="ppm"
                 />
-                <LineChart start={1000} count={1000} title={'EC'} color="red" />
-                <LineChart start={6.5} count={1000} title={'pH'} color="blue" />
+                <LineChart
+                    start={1000}
+                    count={1000}
+                    title={'EC'}
+                    color="red"
+                    scale="μS/cm"
+                />
+                <LineChart
+                    start={6.5}
+                    count={1000}
+                    title={'pH'}
+                    color="blue"
+                    scale="pH"
+                />
                 <LineChart
                     start={24}
                     count={1000}
                     title={'수온'}
                     color="green"
+                    scale="℃"
                 />
             </div>
             <div className="lg: mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3 lg:grid-cols-5">

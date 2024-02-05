@@ -1,5 +1,5 @@
 import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useFetch from '../hooks/useFetch';
 import usePatch from '../hooks/usePatch';
@@ -12,12 +12,15 @@ type FarmItemProp = {
 };
 
 const FarmItem: React.FC<FarmItemProp> = (props) => {
-    const temperature = Math.floor(Math.random() * 10) + 20;
-    const humidity = Math.floor(Math.random() * 30) + 40;
-    const co2 = Math.floor(Math.random() * 30) + 80;
-    const ec = Math.floor(Math.random() * 400) + 800;
-    const ph = Math.floor(Math.random() * 2) + 5.5;
-    const waterTemperature = Math.floor(Math.random() * 10) + 20;
+    const temperature = useMemo(() => Math.floor(Math.random() * 10) + 20, []);
+    const humidity = useMemo(() => Math.floor(Math.random() * 30) + 40, []);
+    const co2 = useMemo(() => Math.floor(Math.random() * 30) + 80, []);
+    const ec = useMemo(() => Math.floor(Math.random() * 400) + 800, []);
+    const ph = useMemo(() => Math.floor(Math.random() * 2) + 5.5, []);
+    const waterTemperature = useMemo(
+        () => Math.floor(Math.random() * 10) + 20,
+        []
+    );
 
     const navigate = useNavigate();
 

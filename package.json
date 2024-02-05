@@ -37,13 +37,15 @@
         "web-vitals": "^2.1.4"
     },
     "scripts": {
-        "start": "react-scripts start",
+        "start": "react-scripts start --help",
         "build": "react-scripts build",
         "test": "react-scripts test --transformIgnorePatterns \"node_modules/(?!axios)/\"",
         "eject": "react-scripts eject",
         "lint": "prettier --write . && eslint 'src/**/*.[jt]s?(x)'",
         "commitlint": "commitlint --edit",
-        "prepare": "husky"
+        "prepare": "husky",
+        "e2e-prepare": "yarn cypress open",
+        "e2e": "yarn cypress run"
     },
     "browserslist": {
         "production": [
