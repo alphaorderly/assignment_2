@@ -6,6 +6,10 @@ import Farms from './views/Farm/Farms';
 import Login from './views/Login/Login';
 import NotFound from './views/NotFound';
 
+/**
+ * 로그인 여부에 따라 라우팅을 결정한다.
+ * @returns
+ */
 const App: React.FC = () => {
     const account = useRecoilValue(accountState);
 

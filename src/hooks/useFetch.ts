@@ -1,9 +1,3 @@
-/**
- * useFetch
- * firebase로 부터 특정 값을 받거나 모든 값을 받아 오는 과정을 간략화 하기 위해 작성.
- * firebase key값을 key id 로 가지는 객체들의 배열을 리턴한다.
- */
-
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
@@ -13,6 +7,20 @@ type DataProp = {
     [key: string]: any;
 };
 
+/**
+ * firebase로 부터 특정 값을 받거나 모든 값을 받아 오는 과정을 간략화 하기 위해 작성.
+ * firebase key값을 key id 로 가지는 객체들의 배열을 리턴한다.
+ * const [data, loading, error, reload] = useFetch('device.json', 'id', 1)
+ * reload() // 데이터를 새로 가져온다.
+ *
+ * @param endPoint 파이어베이스 내부 json 위치
+ * @param orderBy equalTo 로 비교할 열의 이름
+ * @param equalTo 찾을 값
+ * @returns { DataProp[] } data 얻은 데이터
+ * @returns { boolean } loading 로딩 여부
+ * @returns { boolean } error 에러 여부
+ * @returns { () => void } reload 데이터 새로 가져오기
+ */
 const useFetch = (
     endPoint: string,
     orderBy?: string,

@@ -2,6 +2,11 @@ import React, { useRef } from 'react';
 import useLogin from '../../hooks/useLogin';
 import logo from '../../assets/logo.png';
 
+/**
+ * 로그인 화면
+ * /login
+ * @returns
+ */
 const Login: React.FC = () => {
     const inputRef = useRef<HTMLInputElement>(null);
     const [login, success] = useLogin();

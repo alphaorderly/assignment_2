@@ -5,6 +5,10 @@ import { useNavigate } from 'react-router-dom';
 import accountState from '../store/account-state';
 import logo from '../assets/logo.png';
 
+/**
+ * 로그아웃, 초기화면 돌아오기 기능을 위한 헤더.
+ * @returns
+ */
 const Header: React.FC = () => {
     const logout = useResetRecoilState(accountState);
     const account = useRecoilValue(accountState);

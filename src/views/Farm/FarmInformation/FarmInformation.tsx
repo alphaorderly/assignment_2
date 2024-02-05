@@ -17,6 +17,11 @@ type Device = {
     power: boolean;
 };
 
+/**
+ * 자신이 가진 개별 스마트팜의 세부정보
+ * /farms/[:farmId]
+ * @returns
+ */
 const FarmInformation: React.FC = () => {
     const { farmId } = useParams();
 

@@ -7,7 +7,7 @@ import 'jest-canvas-mock';
 import server from './mocks/server';
 
 jest.mock('react-chartjs-2', () => ({
-    Line: (): void => null,
+    Line: (): null => null,
 }));
 
 beforeAll(() => server.listen());

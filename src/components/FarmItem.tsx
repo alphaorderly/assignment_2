@@ -11,6 +11,14 @@ type FarmItemProp = {
     ownerId: string;
 };
 
+/**
+ * 스마트팜 목록에서 개별 스마트팜을 표시하기 위한 컴포넌트
+ * @param { string } key 파이어베이스 키
+ * @param { number } id 스마트팜 id
+ * @param { string } name 스마트팜 이름
+ * @param { string } ownerId 스마트팜 소유자 id
+ * @returns
+ */
 const FarmItem: React.FC<FarmItemProp> = (props) => {
     const temperature = useMemo(() => Math.floor(Math.random() * 10) + 20, []);
     const humidity = useMemo(() => Math.floor(Math.random() * 30) + 40, []);
