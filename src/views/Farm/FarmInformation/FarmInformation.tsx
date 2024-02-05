@@ -61,14 +61,14 @@ const FarmInformation: React.FC = () => {
     };
 
     return (
-        <div className="m-20">
+        <div className="m-5 lg:m-20">
             <div>
                 <UserFarmSelector className="mb-5" />
             </div>
             <div>
                 <p className="mb-10 text-4xl font-bold">{currentFarm.name}</p>
             </div>
-            <div className="grid grid-cols-6 gap-4">
+            <div className="grid grid-cols-1 gap-4 lg:grid-cols-4">
                 <LineChart start={20} count={1000} title={'기온'} color="red" />
                 <LineChart
                     start={60}
@@ -91,7 +91,7 @@ const FarmInformation: React.FC = () => {
                     color="green"
                 />
             </div>
-            <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4 md:grid-cols-6">
+            <div className="lg: mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3 lg:grid-cols-5">
                 {devices.map((device) => (
                     <div
                         key={device.id}

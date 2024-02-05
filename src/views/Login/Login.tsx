@@ -19,7 +19,7 @@ const Login: React.FC = () => {
     };
 
     return (
-        <div className="flex h-[100vh] w-[100%] flex-col justify-center bg-green-200 pl-20 shadow-lg shadow-green-400 lg:w-[600px]">
+        <div className="flex h-[100vh] w-[100%] flex-col justify-center bg-green-200 pl-10 shadow-lg shadow-green-400 lg:w-[40vw] lg:pl-20">
             <img
                 src={logo}
                 width={200}

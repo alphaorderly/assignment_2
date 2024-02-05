@@ -21,7 +21,7 @@ const MyFarmList: React.FC = () => {
     }
 
     return (
-        <div className="m-20 grid auto-rows-min auto-rows-min grid-cols-6">
+        <div className="m-5 grid grid-cols-1 md:grid-cols-2 lg:m-20 lg:grid-cols-3 xl:grid-cols-6">
             {farms.map((farm) => (
                 <FarmItem
                     id={farm.id}
